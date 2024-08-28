@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Tekeli Miki</title>
+    <!--    <meta content="no-cache" http-equiv="Pragma">-->
+    <!--    <meta content="no-cache" http-equiv="Cache-Control">-->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script defer src="js/lottie.js" type="text/javascript"></script>
+    <script src="js/lottie-bootstrap.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<nav>
+    <div id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="flex-row centering" id="nav-link-holder">
+        <p><a href="#personal-info">Tekeli Miki</a></p>
+        <p><a href="#publications">Publikációk</a></p>
+        <p><a href="#teaching">Oktatás</a></p>
+        <p><a href="#videos">Videók</a></p>
+    </div>
+
+    <script>
+        let hamburgerBtn = document.getElementById('hamburger')
+        let navLinkHolder = document.getElementById('nav-link-holder')
+        let navLinks = document.querySelectorAll('#nav-link-holder a')
+
+        let closeMenu = () => {
+            navLinkHolder.classList.toggle('active')
+            hamburgerBtn.classList.toggle('active')
+        };
+        hamburgerBtn.addEventListener('click', closeMenu)
+        navLinks.forEach(link => link.addEventListener('click', closeMenu))
+
+        window.addEventListener('resize', () => {
+            navLinkHolder.classList.add('no-transition');
+
+            setTimeout(() => {
+                navLinkHolder.classList.remove('no-transition');
+            }, 10);
+        });
+    </script>
+</nav>
+
+
+<section id="personal-info">
+    <h2>Személyes Adatok</h2>
+    <div class="card flex-row gap-20" id="profile-pic-holder" style="flex-wrap: wrap; align-items: center">
+        <div class="flex-column gap-10 responsive-width">
+            <div class="flex-column">
+                <img class="responsive-width round-corners" id="profile-picture" src="img/shrek_neutral.jpg"
+                     style="width: 350px;">
+            </div>
+            <div class="flex-row responsive-width centering gap-10" style="width: 350px;">
+                <img class="responsive-width-30" onclick="changePhoto('img/shrek_ali.jpg')" src="img/alliance.png"
+                     title="Alliance">
+                <img class="responsive-width-30" onclick="changePhoto('img/shrek_horde.jpg')" src="img/horde.png"
+                     title="Horde">
+            </div>
+        </div>
+        <script>
+            function changePhoto(targetPath) {
+                let imgElement = document.getElementById('profile-picture')
+                imgElement.src = targetPath
+            }
+        </script>
+        <div>
+            <p><strong>Név:</strong> Dr. Szabó Tamás</p>
+            <p><strong>Tanszék neve:</strong> Analízis Tanszék</p>
+            <p><strong>Beosztás:</strong> Egyetemi docens</p>
+            <p><strong>Telefonszám:</strong> 544083</p>
+            <p><strong>E-mail cím:</strong> <a href="mailto:szbtmsz@math.u-szeged.hu">szbtmsz@math.u-szeged.hu</a></p>
+            <p><strong>Fogadó óra:</strong> Hétfő 14-15</p>
+        </div>
+    </div>
+</section>
+
+<section id="publications">
+    <h2>Publikációk</h2>
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>No.</th>
+                <th>Szerzők</th>
+                <th>Cím</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tekeli M, Fülöp V</td>
+                <td>Cikk hosszú és unamlas címe... Ja és ezt a PDF-t szerintem mindenképp érdemes megnézni :)</td>
+                <td>
+                    <a href="https://drive.google.com/file/d/1q5wqbinCR7QA2tMoXl0veMcpBsRsDC_5/view?usp=sharing"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Tekeli M, Szabó T</td>
+                <td>Az A/B tesztelés módszertani alkalmazásai a felsőbb matematika tanulmányok bukási arányainak
+                    rontására
+                </td>
+                <td>
+                    <a href="https://drive.google.com/file/d/1q5wqbinCR7QA2tMoXl0veMcpBsRsDC_5/view?usp=sharing"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Tekeli M, Szabó T, Fülöp V</td>
+                <td> A szorzótábla és a PTSD rohamok közti empirikus kapcsolat</td>
+                <td>
+                    <a href="https://drive.google.com/file/d/1q5wqbinCR7QA2tMoXl0veMcpBsRsDC_5/view?usp=sharing"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<section id="teaching">
+    <h2>Oktatási tevékenységek</h2>
+    <h3>Oktatott tárgyak</h3>
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>Év</th>
+                <th>Tárgy</th>
+                <th>Bukási arány</th>
+                <th class="word-break-if-overflow">Követelmények</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2021/1</td>
+                <td>GTK Kalkulus</td>
+                <td>40%</td>
+                <td>
+                    <a href="https://www.math.u-szeged.hu/~katai/dimat1_2021/dm1_kovelo_2122i.pdf"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>2022/2</td>
+                <td>Monoidal Categories</td>
+                <td>80%</td>
+                <td>
+                    <a href="https://www.math.u-szeged.hu/~katai/dimat1_2021/dm1_kovelo_2122i.pdf"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>2023/2</td>
+                <td>Computable Functions and Operators</td>
+                <td>90%</td>
+                <td>
+                    <a href="https://www.math.u-szeged.hu/~katai/dimat1_2021/dm1_kovelo_2122i.pdf"
+                       target="_blank">
+                        <div class="lottie" lottie-path="lottie/pdf.json"></div>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Elektronikus tananyagok</h3>
+    <div class="card grid">
+        <a class="lottie-hover-target flex-row centering gap-10" href="https://www.math.u-szeged.hu/%7Eszbtmsz/main.pdf"
+           target="_blank">
+            Műszaki matematika jegyzet
+            <div class="lottie" lottie-path="lottie/pdf.json"></div>
+        </a>
+        <a class="lottie-hover-target flex-row centering gap-10" href="https://www.math.u-szeged.hu/%7Eszbtmsz/main.pdf"
+           target="_blank">
+            GTK kalkulus jegyzet
+            <div class="lottie" lottie-path="lottie/pdf.json"></div>
+        </a>
+        <a class="lottie-hover-target flex-row centering gap-10" href="https://www.math.u-szeged.hu/%7Eszbtmsz/main.pdf"
+           target="_blank">
+            GyTK matematika jegyzet
+            <div class="lottie" lottie-path="lottie/pdf.json"></div>
+        </a>
+        <a class="lottie-hover-target flex-row centering gap-10" href="https://www.math.u-szeged.hu/%7Eszbtmsz/main.pdf"
+           target="_blank">
+            Műveletek törtekkel segédlet
+            <div class="lottie" lottie-path="lottie/pdf.json"></div>
+        </a>
+    </div>
+
+    <h3>Régi Vizsgasorok</h3>
+    <div class="card">
+        <h4>GTK kalkulus</h4>
+        <div class="grid">
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2022 A
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2022 B
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2022 C
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2023 A
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2023 B
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+        </div>
+        <h4>Gyógyszerész kalkulus</h4>
+        <div class="grid">
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2022 A
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+            <a class="lottie-hover-target flex-row centering gap-10"
+               href="https://www.math.u-szeged.hu/%7Eszbtmsz/kv14.pdf"
+               target="_blank">
+                2022 B
+                <div class="lottie" lottie-path="lottie/pdf.json"></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section id="videos">
+    <h2>Videók</h2>
+    <div class="card grid">
+        <a class="lottie-hover-target flex-row centering gap-10"
+           href="https://www.youtube.com/playlist?list=PLm_pNdtN9Bap82U1dvkOT1uUXovYNnsUl"
+           target="_blank">
+            Alapismeretek
+            <div class="lottie" lottie-path="lottie/youtube.json"></div>
+        </a>
+        <a class="lottie-hover-target flex-row centering gap-10"
+           href="https://www.youtube.com/playlist?list=PLm_pNdtN9BaoZBE-JeGrf8B3u9sDsDVuI"
+           target="_blank">
+            GTK - Kalkulus - Házi feladatsor
+            <div class="lottie" lottie-path="lottie/youtube.json"></div>
+        </a>
+        <a class="lottie-hover-target flex-row centering gap-10"
+           href="https://www.youtube.com/playlist?list=PLm_pNdtN9BarG-oGVyofEQB2DZNRaXSrW"
+           target="_blank">
+            GTK - Valség - Házi feladatsor
+            <div class="lottie" lottie-path="lottie/youtube.json"></div>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>
