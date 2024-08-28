@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Tekeli Miki</title>
-    <!--    <meta content="no-cache" http-equiv="Pragma">-->
-    <!--    <meta content="no-cache" http-equiv="Cache-Control">-->
+    <meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="Pragma">
+    <meta content="0" http-equiv="Expires">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script defer src="js/lottie.js" type="text/javascript"></script>
@@ -54,14 +56,16 @@
     <div class="card flex-row gap-20" id="profile-pic-holder" style="flex-wrap: wrap; align-items: center">
         <div class="flex-column gap-10 responsive-width">
             <div class="flex-column">
-                <img class="responsive-width round-corners" id="profile-picture" src="img/shrek_neutral.jpg"
-                     style="width: 350px;">
+                <img alt="Profile picture" class="responsive-width round-corners" id="profile-picture"
+                     src="img/shrek_neutral.jpg" style="width: 350px;">
             </div>
             <div class="flex-row responsive-width centering gap-10" style="width: 350px;">
-                <img class="responsive-width-30" onclick="changePhoto('img/shrek_ali.jpg')" src="img/alliance.png"
-                     title="Alliance">
-                <img class="responsive-width-30" onclick="changePhoto('img/shrek_horde.jpg')" src="img/horde.png"
-                     title="Horde">
+                <img alt="Profile picture, dressed as an Alliance character from WoW" class="responsive-width-30"
+                     onclick="changePhoto('img/shrek_ali.jpg')"
+                     src="img/alliance.png" title="Alliance">
+                <img alt="Profile picture, dressed as a Horde character form Wow" class="responsive-width-30"
+                     onclick="changePhoto('img/shrek_horde.jpg')"
+                     src="img/horde.png" title="Horde">
             </div>
         </div>
         <script>
